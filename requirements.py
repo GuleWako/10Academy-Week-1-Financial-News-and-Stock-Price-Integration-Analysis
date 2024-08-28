@@ -19,9 +19,7 @@ matplotlib==3.9.2
 matplotlib-inline==0.1.7
 nest-asyncio==1.6.0
 nltk==3.9.1
-numpy==2.1.0
 packaging==24.1
-pandas==2.2.2
 parso==0.8.4
 pexpect==4.9.0
 pillow==10.4.0
@@ -39,6 +37,9 @@ regex==2024.7.24
 seaborn==0.13.2
 six==1.16.0
 stack-data==0.6.3
+TA-Lib==0.4.32
+textblob==0.18.0.post0
+threadpoolctl==3.5.0
 tornado==6.4.1
 tqdm==4.66.5
 traitlets==5.14.3

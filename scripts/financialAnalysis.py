@@ -146,3 +146,168 @@ def technicalIndicatorsVsClosingPrice(stock_data_aapl,stock_data_amzn,stock_data
 
     plt.show()
 
+
+
+def closingPriceRelativeStrengthIndex(stock_data_aapl,stock_data_amzn,stock_data_goog,stock_data_meta,stock_data_msft,stock_data_nvda):
+    fig, axs = plt.subplots(6,2, gridspec_kw={"height_ratios": [1, 1, 1, 1,1,1]}, figsize=(16,22))
+
+    # For AAPL
+    axs[0][0].plot(stock_data_aapl['Date'], stock_data_aapl['Close'],label="Close")
+    axs[0][0].set_title("AAPL Stock Price")
+    axs[0][0].legend()
+    axs[1][0].axhline(y=70, color='r',linestyle="--")
+    axs[1][0].axhline(y=30, color='g',linestyle="--")
+    axs[1][0].plot(stock_data_aapl['Date'],stock_data_aapl['RSI'], color='orange', label="RSI")
+    axs[1][0].legend()
+
+    # for GOOG
+    axs[0][1].plot(stock_data_goog['Date'], stock_data_goog['Close'],label="Close")
+    axs[0][1].set_title("GOOG Stock Price")
+    axs[0][1].legend()
+    axs[1][1].axhline(y=70, color='r',linestyle="--")
+    axs[1][1].axhline(y=30, color='g',linestyle="--")
+    axs[1][1].plot(stock_data_goog['Date'],stock_data_goog['RSI'], color='orange', label="RSI")
+    axs[1][1].legend()
+
+    # for AMZN
+    axs[2][0].plot(stock_data_amzn['Date'], stock_data_amzn['Close'],label="Close")
+    axs[2][0].set_title("AMZN Stock Price")
+    axs[2][0].legend()
+    axs[3][0].axhline(y=70, color='r',linestyle="--")
+    axs[3][0].axhline(y=30, color='g',linestyle="--")
+    axs[3][0].plot(stock_data_amzn['Date'],stock_data_amzn['RSI'], color='orange', label="RSI")
+    axs[3][0].legend()
+
+    # for NVDA
+    axs[2][1].plot(stock_data_nvda['Date'], stock_data_nvda['Close'],label="Close")
+    axs[2][1].set_title("NVDA Stock Price")
+    axs[2][1].legend()
+    axs[3][1].axhline(y=70, color='r',linestyle="--")
+    axs[3][1].axhline(y=30, color='g',linestyle="--")
+    axs[3][1].plot(stock_data_nvda['Date'],stock_data_nvda['RSI'], color='orange', label="RSI")
+    axs[3][1].legend()
+
+
+    # for MSFT
+    axs[4][0].plot(stock_data_msft['Date'], stock_data_msft['Close'],label="Close")
+    axs[4][0].set_title("MSFT Stock Price")
+    axs[4][0].legend()
+    axs[5][0].axhline(y=70, color='r',linestyle="--")
+    axs[5][0].axhline(y=30, color='g',linestyle="--")
+    axs[5][0].plot(stock_data_msft['Date'],stock_data_msft['RSI'], color='orange', label="RSI")
+    axs[5][0].legend()
+
+    # for META
+    axs[4][1].plot(stock_data_meta['Date'], stock_data_meta['Close'],label="Close")
+    axs[4][1].set_title("META Stock Price")
+    axs[4][1].legend()
+    axs[5][1].axhline(y=70, color='r',linestyle="--")
+    axs[5][1].axhline(y=30, color='g',linestyle="--")
+    axs[5][1].plot(stock_data_meta['Date'],stock_data_meta['RSI'], color='orange', label="RSI")
+    axs[5][1].legend()
+    fig.show()
+    # momentum oscillator that measures the speed and change of price movements.
+    # Identifying overbought and oversold conditions. A reading above 70 is typically 
+    # considered overbought, while a reading below 30 is considered oversold.
+
+def closingPriceMovingAverageConvergenceDivergence(stock_data_aapl,stock_data_amzn,stock_data_goog,stock_data_meta,stock_data_msft,stock_data_nvda):
+        
+    fig, axs = plt.subplots(6,2, gridspec_kw={"height_ratios": [1, 1, 1, 1,1,1]}, figsize=(16,22))
+
+    # for AAPL
+    axs[0][0].plot(stock_data_aapl['Date'], stock_data_aapl['Close'],label="Close")
+    axs[0][0].set_title("AAPL Stock Price")
+    axs[0][0].legend()
+    axs[1][0].axhline(y=5, color='r',linestyle="--")
+    axs[1][0].axhline(y=-5, color='g',linestyle="--")
+    axs[1][0].plot(stock_data_aapl['Date'],stock_data_aapl['MACD'], color='orange', label="MACD")
+    axs[1][0].plot(stock_data_aapl['Date'],stock_data_aapl['MACD_Signal'], color='r', label="MACD_Signal")
+    axs[1][0].legend()
+
+
+    # for GOOG
+    axs[0][1].plot(stock_data_goog['Date'], stock_data_goog['Close'],label="Close")
+    axs[0][1].set_title("GOOG Stock Price")
+    axs[0][1].legend()
+    axs[1][1].axhline(y=5, color='r',linestyle="--")
+    axs[1][1].axhline(y=-5, color='g',linestyle="--")
+    axs[1][1].plot(stock_data_aapl['Date'],stock_data_aapl['MACD'], color='orange', label="MACD")
+    axs[1][1].plot(stock_data_aapl['Date'],stock_data_aapl['MACD_Signal'], color='r', label="MACD_Signal")
+    axs[1][1].legend()
+
+    # for AMZN
+    axs[2][0].plot(stock_data_amzn['Date'], stock_data_amzn['Close'],label="Close")
+    axs[2][0].set_title("AMZN Stock Price")
+    axs[2][0].legend()
+    axs[3][0].axhline(y=5, color='r',linestyle="--")
+    axs[3][0].axhline(y=-5, color='g',linestyle="--")
+    axs[3][0].plot(stock_data_aapl['Date'],stock_data_aapl['MACD'], color='orange', label="MACD")
+    axs[3][0].plot(stock_data_aapl['Date'],stock_data_aapl['MACD_Signal'], color='r', label="MACD_Signal")
+    axs[3][0].legend()
+
+    # for NVDA
+    axs[2][1].plot(stock_data_nvda['Date'], stock_data_nvda['Close'],label="Close")
+    axs[2][1].set_title("NVDA Stock Price")
+    axs[2][1].legend()
+    axs[3][1].axhline(y=5, color='r',linestyle="--")
+    axs[3][1].axhline(y=-5, color='g',linestyle="--")
+    axs[3][1].plot(stock_data_aapl['Date'],stock_data_aapl['MACD'], color='orange', label="MACD")
+    axs[3][1].plot(stock_data_aapl['Date'],stock_data_aapl['MACD_Signal'], color='r', label="MACD_Signal")
+    axs[3][1].legend()
+
+
+    # for MSFT
+    axs[4][0].plot(stock_data_msft['Date'], stock_data_msft['Close'],label="Close")
+    axs[4][0].set_title("MSFT Stock Price")
+    axs[4][0].legend()
+    axs[5][0].axhline(y=5, color='r',linestyle="--")
+    axs[5][0].axhline(y=-5, color='g',linestyle="--")
+    axs[5][0].plot(stock_data_aapl['Date'],stock_data_aapl['MACD'], color='orange', label="MACD")
+    axs[5][0].plot(stock_data_aapl['Date'],stock_data_aapl['MACD_Signal'], color='r', label="MACD_Signal")
+    axs[5][0].legend()
+
+    # for META
+    axs[4][1].plot(stock_data_meta['Date'], stock_data_meta['Close'],label="Close")
+    axs[4][1].set_title("META Stock Price")
+    axs[4][1].legend()
+    axs[5][1].axhline(y=5, color='r',linestyle="--")
+    axs[5][1].axhline(y=-5, color='g',linestyle="--")
+    axs[5][1].plot(stock_data_aapl['Date'],stock_data_aapl['MACD'], color='orange', label="MACD")
+    axs[5][1].plot(stock_data_aapl['Date'],stock_data_aapl['MACD_Signal'], color='r', label="MACD_Signal")
+    axs[5][1].legend()
+    fig.show()
+    # A MACD crossover (when the signal line crosses the MACD line) can indicate a potential trend change.
+    # In this case both MACD and MACD_Signal have the same value
+
+def calculatePortfolioWeightAndPerformance():
+    from pypfopt.efficient_frontier import EfficientFrontier
+    from pypfopt import risk_models
+    from pypfopt import expected_returns
+
+    tickers =['AAPL','AMZN','GOOG','MSFT','NVDA','META','TSLA']
+    # Load data from each ticker file
+    dataframes = [loadHistoricalData(ticker) for ticker in tickers]
+
+    # Combine dataframes into a single DataFrame
+    combined_data = pd.concat(dataframes, axis=1)['Close']
+
+    new_column_names = ['AAPL', 'AMZN','GOOG', 'META','MSFT','NVDA','TSLA'] 
+    combined_data.columns = new_column_names
+
+    # Calculate expected returns and sample covariance
+    mu = expected_returns.mean_historical_return(combined_data)
+    S = risk_models.sample_cov(combined_data)
+
+    # Optimize for maximal Sharpe ratio
+    ef = EfficientFrontier(mu, S)
+    weights = ef.max_sharpe()
+    weights = dict(zip(['AAPL', 'AMZN','GOOG', 'META','MSFT','NVDA','TSLA'],[round(value, 2) for value in weights.values()]))
+
+    # Print Portfolio weights
+    print("Portfolio Weights:")
+    print(weights)
+
+
+    # Calculate and print portfolio performance
+    print("\nPortfolio Performance:")
+    ef.portfolio_performance(verbose=True)

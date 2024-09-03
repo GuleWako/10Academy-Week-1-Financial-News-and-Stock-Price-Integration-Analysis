@@ -63,6 +63,7 @@ referencing==0.35.1
 regex==2024.7.24
 requests==2.32.3
 rpds-py==0.20.0
+scikit-learn==1.5.1
 scipy==1.14.1
 scs==3.2.7
 seaborn==0.13.2
